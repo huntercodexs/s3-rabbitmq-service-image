@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Configuration status="WARN" monitorInterval="30">
+    <Properties>
+        <Property name="LOG_PATTERN">
+            %d{yyyy-MM-dd HH:mm:ss.SSS} %5p ${hostName} --- [%15.15t] %-40.40c{1.} : %m%n%ex
+        </Property>
+    </Properties>
+
+    <Appenders>
+        <Console name="ConsoleAppender" target="SYSTEM_OUT" follow="true">
+            <PatternLayout pattern="${LOG_PATTERN}"/>
+        </Console>
+
+        <!-- Rolling File Appender -->
+        <RollingRandomAccessFile name="RollingRandomAccessFile" fileName="/var/log/microservices/S3-RABBITMQ-SERVICE-IMAGE/S3-RABBITMQ-SERVICE-IMAGE.log"
+                                 filePattern="/var/log/microservices/S3-RABBITMQ-SERVICE-IMAGE/S3-RABBITMQ-SERVICE-IMAGE-%d{yyyy-MM-dd}-%i.log">
+            <PatternLayout>
+                <Pattern>${LOG_PATTERN}</Pattern>
+            </PatternLayout>
+            <Policies>
+                <TimeBasedTriggeringPolicy interval="1" />
+                <SizeBasedTriggeringPolicy size="10MB" />
+            </Policies>
+            <DefaultRolloverStrategy max="10"/>
+        </RollingRandomAccessFile>
+
+
+        <Gelf name="gelf" host="udp:192.168.0.174" port="12201" version="1.1" extractStackTrace="true"
+              filterStackTrace="true" mdcProfiling="true" includeFullMdc="true" maximumMessageSize="8192"
+              originHost="%host{address}" additionalFieldTypes="fieldName1=String,fieldName2=Double,fieldName3=Long">
+            <Field name="timestamp" pattern="%d{dd MMM yyyy HH:mm:ss,SSS}" />
+            <Field name="level" pattern="%level" />
+            <Field name="simpleClassName" pattern="%c{1}" />
+            <Field name="className" pattern="%c" />
+            <Field name="server" pattern="%host" />
+            <Field name="server.fqdn" pattern="%host{address}" />
+            <!-- This is a static field -->
+            <Field name="fieldName2" literal="fieldValue2" />
+
+            <!-- This is a field using MDC -->
+            <Field name="mdcField2" mdc="mdcField2" />
+            <DynamicMdcFields regex="mdc.*" />
+            <DynamicMdcFields regex="(mdc|MDC)fields" />
+        </Gelf>
+
+    </Appenders>
+
+    <Loggers>
+        <AsyncLogger name="com.huntercodexs.serviceimage" level="info"
+                     additivity="false">
+            <AppenderRef ref="ConsoleAppender" />
+            <AppenderRef ref="RollingRandomAccessFile" />
+            <AppenderRef ref="gelf" />
+        </AsyncLogger>
+
+        <AsyncRoot level="info">
+            <AppenderRef ref="ConsoleAppender" />
+            <AppenderRef ref="gelf" />
+        </AsyncRoot>
+
+    </Loggers>
+</Configuration>
