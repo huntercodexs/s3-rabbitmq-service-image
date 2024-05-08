@@ -1,6 +1,6 @@
 package com.huntercodexs.serviceimage.service;
 
-import com.huntercodexs.serviceimage.dto.ImageDataDto;
+import com.huntercodexs.serviceimage.dto.ServiceImageRequestDto;
 import com.huntercodexs.serviceimage.message.ServiceImageProducer;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -16,17 +16,17 @@ public class ServiceImageStorage {
     @Autowired
     ServiceImageProducer serviceImageProducer;
 
-    public String save(ImageDataDto imageDataDto) {
+    public String save(ServiceImageRequestDto serviceImageRequestDto) {
 
         log.info("ServiceImageStorage is running");
 
         String guidId = UUID.randomUUID().toString();
         String imageFilename = guidId+".jpg";
-        imageDataDto.setFilename(imageFilename);
+        serviceImageRequestDto.setFilename(imageFilename);
 
         log.info("ImageFilename to save {}", imageFilename);
 
-        serviceImageProducer.saveImage().send(MessageBuilder.withPayload(imageDataDto).build());
+        serviceImageProducer.saveImage().send(MessageBuilder.withPayload(serviceImageRequestDto).build());
 
         return guidId;
     }

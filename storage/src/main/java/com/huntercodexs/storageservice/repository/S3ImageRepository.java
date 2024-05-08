@@ -1,6 +1,6 @@
 package com.huntercodexs.storageservice.repository;
 
-import com.huntercodexs.storageservice.dto.ImageDataDto;
+import com.huntercodexs.storageservice.dto.StorageRequestDto;
 import lombok.extern.slf4j.Slf4j;
 import org.apache.commons.io.IOUtils;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,7 +10,6 @@ import org.springframework.core.io.ResourceLoader;
 import org.springframework.core.io.WritableResource;
 import org.springframework.stereotype.Service;
 
-import java.io.IOException;
 import java.io.InputStream;
 import java.io.OutputStream;
 import java.nio.charset.StandardCharsets;
@@ -26,13 +25,13 @@ public class S3ImageRepository {
 	@Autowired
 	ResourceLoader resourceLoader;
 
-	public void save(ImageDataDto imageDataDto) {
+	public void save(StorageRequestDto storageRequestDto) {
 
 		log.info("Starting save in S3");
 
-		String path = "s3://"+bucketName+"/"+imageDataDto.getFilename();
+		String path = "s3://"+bucketName+"/"+ storageRequestDto.getFilename();
 
-		log.info("S3 path: " + imageDataDto.getFilename());
+		log.info("S3 path: " + storageRequestDto.getFilename());
 
 		Resource resource = resourceLoader.getResource(path);
 
@@ -40,7 +39,7 @@ public class S3ImageRepository {
 
         try (OutputStream outputStream = writableResource.getOutputStream()) {
 
-            outputStream.write(imageDataDto.getData());
+            outputStream.write(storageRequestDto.getData());
 
 			log.info("Image saved successfully in the S3");
 
@@ -62,7 +61,7 @@ public class S3ImageRepository {
 			InputStream inputStream = resource.getInputStream();
 			return new String(Base64.getEncoder().encode(IOUtils.toByteArray(inputStream)), StandardCharsets.UTF_8);
 
-		} catch (IOException e) {
+		} catch (Exception e) {
 			return null;
 		}
 	}

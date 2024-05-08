@@ -9,6 +9,6 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class ImageDataResponseDto {
+public class StorageResponseDto {
     String file;
 }

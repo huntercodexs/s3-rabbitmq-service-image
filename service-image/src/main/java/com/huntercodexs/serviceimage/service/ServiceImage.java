@@ -1,6 +1,6 @@
 package com.huntercodexs.serviceimage.service;
 
-import com.huntercodexs.serviceimage.dto.ImageDataDto;
+import com.huntercodexs.serviceimage.dto.ServiceImageRequestDto;
 import com.huntercodexs.serviceimage.dto.ServiceImageResponseDto;
 import lombok.extern.slf4j.Slf4j;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -13,20 +13,20 @@ public class ServiceImage {
 	@Autowired
 	ServiceImageStorage serviceImageStorage;
 
-	public ServiceImageResponseDto addImageService(ImageDataDto imageDataDto) {
+	public ServiceImageResponseDto addImageService(ServiceImageRequestDto serviceImageRequestDto) {
 
 		log.info("imageAddService is running");
 
-		String guid = addImage(imageDataDto);
+		String guid = addImage(serviceImageRequestDto);
 
         log.info("image added: {}", guid);
 
 		return ServiceImageResponseDto.builder().guid(guid).build();
 	}
 
-	private String addImage(ImageDataDto imageDataDto) {
+	private String addImage(ServiceImageRequestDto serviceImageRequestDto) {
 		try {
-			return serviceImageStorage.save(imageDataDto);
+			return serviceImageStorage.save(serviceImageRequestDto);
 		} catch (RuntimeException re) {
 			return null;
 		}

@@ -1,6 +1,6 @@
 package com.huntercodexs.serviceimage.controller.rest;
 
-import com.huntercodexs.serviceimage.dto.ImageDataDto;
+import com.huntercodexs.serviceimage.dto.ServiceImageRequestDto;
 import com.huntercodexs.serviceimage.dto.ServiceImageResponseDto;
 import com.huntercodexs.serviceimage.service.ServiceImage;
 import lombok.extern.slf4j.Slf4j;
@@ -21,9 +21,9 @@ public class ServiceImageRestController {
 
 	@PostMapping(path = "${api.endpoint-add:/service-image/api/rest/add}")
 	@ResponseBody
-	public ResponseEntity<ServiceImageResponseDto> add(@RequestBody ImageDataDto imageDataDto) {
+	public ResponseEntity<ServiceImageResponseDto> add(@RequestBody ServiceImageRequestDto serviceImageRequestDto) {
 		log.info("Request received to add image");
-		return new ResponseEntity<>(serviceImage.addImageService(imageDataDto), HttpStatus.ACCEPTED);
+		return new ResponseEntity<>(serviceImage.addImageService(serviceImageRequestDto), HttpStatus.ACCEPTED);
 	}
 
 }

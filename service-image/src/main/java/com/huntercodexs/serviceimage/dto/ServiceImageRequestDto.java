@@ -9,7 +9,7 @@ import lombok.*;
 @ToString
 @AllArgsConstructor
 @NoArgsConstructor
-public class ImageDataDto {
+public class ServiceImageRequestDto {
     byte[] data;
     String filename;
 }
