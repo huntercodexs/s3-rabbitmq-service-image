@@ -1,4 +1,4 @@
-<mxfile host="app.diagrams.net" modified="2024-05-08T11:53:43.712Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="5Uq0hYmRod0QZziMCp_7" version="24.3.1" type="device" pages="3">
+<mxfile host="app.diagrams.net" modified="2024-05-08T11:57:50.331Z" agent="Mozilla/5.0 (X11; Ubuntu; Linux x86_64; rv:125.0) Gecko/20100101 Firefox/125.0" etag="tGvkz0kv2mMwTtN3gP68" version="24.3.1" type="device" pages="3">
   <diagram name="Workflow" id="iHuXPgY5fLVmhuYREPNz">
     <mxGraphModel dx="2074" dy="793" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="850" pageHeight="1100" math="0" shadow="0">
       <root>
@@ -222,8 +222,8 @@
         <mxCell id="Iuo2MzZ9dfhdU-_pjwHk-23" value="serviceimage/service/" style="text;html=1;align=right;verticalAlign=middle;resizable=0;points=[];autosize=1;strokeColor=none;fillColor=none;fontColor=#3399FF;" parent="1" vertex="1">
           <mxGeometry x="824.03" y="585" width="140" height="30" as="geometry" />
         </mxCell>
-        <mxCell id="Iuo2MzZ9dfhdU-_pjwHk-42" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;SERVICE-IMAGE&lt;/font&gt;&lt;/h1&gt;&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;CLASSESS&lt;font&gt;&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
-          <mxGeometry x="177.77" y="390" width="241.94" height="78" as="geometry" />
+        <mxCell id="Iuo2MzZ9dfhdU-_pjwHk-42" value="&lt;h1 style=&quot;margin-top: 0px;&quot;&gt;&lt;font style=&quot;font-size: 24px;&quot;&gt;SERVICE-IMAGE CLASSESS&lt;font&gt;&lt;br&gt;&lt;/font&gt;&lt;/font&gt;&lt;/h1&gt;" style="text;html=1;whiteSpace=wrap;overflow=hidden;rounded=0;" parent="1" vertex="1">
+          <mxGeometry x="128.4" y="418.5" width="332.23" height="40" as="geometry" />
         </mxCell>
         <mxCell id="Iuo2MzZ9dfhdU-_pjwHk-47" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;entryX=0.5;entryY=0;entryDx=0;entryDy=0;" parent="1" source="Iuo2MzZ9dfhdU-_pjwHk-48" target="Iuo2MzZ9dfhdU-_pjwHk-4" edge="1">
           <mxGeometry relative="1" as="geometry">
@@ -805,6 +805,24 @@
         </mxCell>
         <mxCell id="pp1zxGDtGYAl6klaY1-S-11" value="&lt;font style=&quot;font-size: 10px;&quot;&gt;{&quot;data&quot;:&quot;&quot;,&quot;filename&quot;:&quot;&quot;}&lt;/font&gt;" style="text;html=1;align=left;verticalAlign=middle;whiteSpace=wrap;rounded=0;" parent="1" vertex="1">
           <mxGeometry x="181.03" y="683" width="226.97" height="19" as="geometry" />
+        </mxCell>
+        <mxCell id="npxiDUCKDZGFtP_JJ4OU-1" value="data" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/general/Image.svg;" vertex="1" parent="1">
+          <mxGeometry x="1166" y="402" width="29.09" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="npxiDUCKDZGFtP_JJ4OU-2" value="data" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/general/Image.svg;" vertex="1" parent="1">
+          <mxGeometry x="1206" y="402" width="29.09" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="npxiDUCKDZGFtP_JJ4OU-3" value="data" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/general/Image.svg;" vertex="1" parent="1">
+          <mxGeometry x="1246" y="402" width="29.09" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="npxiDUCKDZGFtP_JJ4OU-4" value="data" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/general/Image.svg;" vertex="1" parent="1">
+          <mxGeometry x="1166" y="449.20000000000005" width="29.09" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="npxiDUCKDZGFtP_JJ4OU-5" value="data" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/general/Image.svg;" vertex="1" parent="1">
+          <mxGeometry x="1206" y="449.20000000000005" width="29.09" height="20" as="geometry" />
+        </mxCell>
+        <mxCell id="npxiDUCKDZGFtP_JJ4OU-6" value="data" style="image;aspect=fixed;html=1;points=[];align=center;fontSize=12;image=img/lib/azure2/general/Image.svg;" vertex="1" parent="1">
+          <mxGeometry x="1246" y="449.20000000000005" width="29.09" height="20" as="geometry" />
         </mxCell>
       </root>
     </mxGraphModel>
